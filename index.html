@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Workflow Finder</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="container">
+    <header class="brand"><span>✦</span> AI Workflow Finder</header>
+    <section class="hero">
+      <p class="eyebrow">AI ADOPTION STARTS WITH REAL WORK</p>
+      <h1>Where could AI save you time?</h1>
+      <p class="subtitle">Describe one repetitive task. Get a practical AI opportunity, an estimated time saving, and a simple first step to test it.</p>
+    </section>
+
+    <section class="card">
+      <form id="workflowForm">
+        <label for="task">What repetitive task takes your time?</label>
+        <textarea id="task" required placeholder="Example: I read customer emails, find the important details, and copy them into Excel."></textarea>
+
+        <div class="grid">
+          <div>
+            <label for="frequency">How often?</label>
+            <select id="frequency">
+              <option value="daily">Several times a day</option>
+              <option value="weekly">A few times a week</option>
+              <option value="monthly">A few times a month</option>
+            </select>
+          </div>
+          <div>
+            <label for="minutes">Minutes per occurrence</label>
+            <input id="minutes" type="number" min="1" value="15" required>
+          </div>
+        </div>
+
+        <label for="tools">What tools do you currently use?</label>
+        <input id="tools" placeholder="Example: Gmail, Excel, WhatsApp">
+
+        <button type="submit">Find the opportunity <span>→</span></button>
+      </form>
+    </section>
+
+    <section id="result" class="card result hidden">
+      <div class="result-top">
+        <div>
+          <p class="eyebrow">YOUR OPPORTUNITY</p>
+          <h2 id="resultTitle"></h2>
+        </div>
+        <div class="score"><strong id="score">0</strong><span>/100</span><small>opportunity</small></div>
+      </div>
+      <div class="stats">
+        <div><strong id="timeSaved">0h</strong><span>estimated time / month</span></div>
+        <div><strong id="saving">0%</strong><span>potential time reduction</span></div>
+      </div>
+      <div class="insight"><h3>Why this looks like an opportunity</h3><p id="why"></p></div>
+      <div class="insight"><h3>Suggested AI approach</h3><p id="approach"></p></div>
+      <div class="insight"><h3>First step to test it</h3><p id="firstStep"></p></div>
+      <button id="reset" class="secondary">Analyse another task</button>
+    </section>
+
+    <section class="examples">
+      <p>Try an example</p>
+      <div class="chips">
+        <button data-example="I read customer emails and copy order details into Excel.">Customer emails → Excel</button>
+        <button data-example="Every Friday I collect numbers from different spreadsheets and prepare a weekly report.">Weekly reporting</button>
+        <button data-example="I compare supplier quotations and manually identify the cheapest option that meets the requirements.">Compare quotations</button>
+      </div>
+    </section>
+
+    <footer>Prototype • Built to test the idea, not to replace human judgment.</footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
